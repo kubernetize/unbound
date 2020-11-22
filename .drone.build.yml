@@ -8,8 +8,9 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    repo: kubernetize/unbound
+    repo: ghcr.io/kubernetize/unbound
+    registry: ghcr.io
     auto_tag: true
     username: rkojedzinszky
     password:
-      from_secret: hub_docker_password
+      from_secret: ghcr.io.password

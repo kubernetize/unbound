@@ -1,5 +1,8 @@
 FROM alpine:3.11
 
+LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
+LABEL org.opencontainers.image.source https://github.com/kubernetize/unbound
+
 RUN addgroup -g 5353 unbound && \
     adduser -G unbound -D -H -u 5353 unbound && \
     apk --no-cache add libcap unbound && \
