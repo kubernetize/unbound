@@ -27,7 +27,7 @@ spec:
                 - unbound
             topologyKey: kubernetes.io/hostname
       containers:
-      - image: kubernetize/unbound
+      - image: ghcr.io/kubernetize/unbound
         name: unbound
         securityContext:
           capabilities:
