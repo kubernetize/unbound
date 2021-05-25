@@ -6,7 +6,7 @@ platform:
 
 steps:
 - name: build
-  image: plugins/docker:19
+  image: plugins/docker
   settings:
     repo: ghcr.io/kubernetize/unbound
     registry: ghcr.io
