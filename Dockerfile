@@ -1,4 +1,4 @@
-FROM alpine:3.14.0
+FROM alpine:3.14.2
 
 LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
 LABEL org.opencontainers.image.source https://github.com/kubernetize/unbound
