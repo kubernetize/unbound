@@ -7,6 +7,7 @@ RUN addgroup -g 5353 unbound && \
     adduser -G unbound -D -H -u 5353 unbound && \
     apk --no-cache add libcap unbound bind-tools && \
     setcap cap_net_bind_service+ep /usr/sbin/unbound && \
+    apk --no-cache del libcap && \
     mkdir -p /var/run/unbound && \
     (unbound-anchor -a /var/run/unbound/root.key || :) && \
     chown -R unbound:unbound /var/run/unbound
