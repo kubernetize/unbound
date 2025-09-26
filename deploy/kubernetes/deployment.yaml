@@ -6,34 +6,16 @@ spec:
   selector:
     matchLabels:
       app: unbound
-  strategy:
-    rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
         app: unbound
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - unbound
-            topologyKey: kubernetes.io/hostname
       containers:
       - image: ghcr.io/kubernetize/unbound
         name: unbound
-        securityContext:
-          capabilities:
-            add:
-            - NET_BIND_SERVICE
-          runAsNonRoot: true
-      hostNetwork: true
-      nodeSelector:
-        dns: unbound
+      securityContext:
+        runAsNonRoot: true
+        sysctls:
+        - name: net.ipv4.ip_unprivileged_port_start
+          value: "0"

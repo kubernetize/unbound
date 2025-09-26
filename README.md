@@ -1,6 +1,6 @@
 # unbound
 
-Rootless Unbound from Alpine with `CAP_NET_BIND_SERVICE` set on binary.
+Rootless Unbound from Alpine.
 
 With default configuration Unbound listens on port 53.
 
